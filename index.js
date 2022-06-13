@@ -1,101 +1,306 @@
+///RESPUESTAS
+let preguntas = [
+    {pregunta: '1',
+     respuestas: [{respuesta: 'ELEFANTE',
+                cantidad: 36},
+                {respuesta: 'JIRAFA',
+                cantidad: 25},
+                {respuesta: 'LEÓN',
+                cantidad: 18},
+                {respuesta: 'RINOCERONTE',
+                cantidad: 12},
+                {respuesta: 'OSO',     
+                cantidad: 9}
+                ]
+  },
+  {pregunta: '2',
+   respuestas: [{respuesta: 'TENGO QUE ESTUDIAR',
+                cantidad: 37},
+                {respuesta: 'LO MIRO POR FACEBOOK',
+                cantidad: 19},
+                {respuesta: 'NO TENGO EN QUE IR',
+                cantidad: 14},
+                {respuesta: 'TENGO CULTO EN CASA',
+                cantidad: 11},
+                {respuesta: 'ME CAYÓ VISITA',     
+                cantidad: 10},
+                {respuesta: 'JUEGA MI EQUIPO DE FÚTBOL',
+                cantidad: 5},
+                {respuesta: 'ME DORMÍ',
+                cantidad: 4}
+                ]
+  },
+  {pregunta: '3',
+   respuestas: [{respuesta: 'ME DUERMO',
+                cantidad: 45},
+                {respuesta: 'NO ENTIENDO NADA',
+                cantidad: 23},
+                {respuesta: 'VOY SIN DESAYUNAR',
+                cantidad: 12},
+                {respuesta: 'ME LEVANTO 5 MINUTOS ANTES',
+                cantidad: 9},
+                {respuesta: 'LLEGO TARDE SIEMPRE',     
+                cantidad: 7},
+                {respuesta: 'MATES Y GALLETITAS DURANTE LA PRÉDICA',
+                cantidad: 4}
+                ]
+  },
+  {pregunta: '4',
+   respuestas: [{respuesta: 'MULTIPLICACIÓN DE LOS PANES',
+                cantidad: 32},
+                {respuesta: 'MAR ROJO',
+                cantidad: 25},
+                {respuesta: 'CAMINAR EN AGUA',
+                cantidad: 21},
+                {respuesta: 'JESUS RESUCITÓ',
+                cantidad: 18},
+                {respuesta: 'AGUA EN VINO',     
+                cantidad: 7}
+                ]
+  },
+  {pregunta: '5',
+   respuestas: [{respuesta: 'ES MÁS CÓMODO',
+                cantidad: 54},
+                {respuesta: 'ENCUENTRO RAPIDO EL VERSÍCULO',
+                cantidad: 15},
+                {respuesta: 'PUEDO MIRAR LA REDES',
+                cantidad: 11},
+                {respuesta: 'NO ME ENTRA LA BIBLIA EN EL BOLSO',
+                cantidad: 11},
+                {respuesta: 'ME DA VERGÜENZA LLEVARLA',     
+                cantidad: 9}
+                ]
+  },
+  {pregunta: '6',
+   respuestas: [{respuesta: 'COSAS DE HIGIENE',
+                cantidad: 60},
+                {respuesta: 'OJOTAS',
+                cantidad: 28},
+                {respuesta: 'ROPA',
+                cantidad: 6},
+                {respuesta: 'ROPA DE CAMA',
+                cantidad: 3},
+                {respuesta: 'BIBLIA',     
+                cantidad: 2},
+                {respuesta: 'UTENSILIOS',
+                cantidad: 1}
+                ]
+  },
+  {pregunta: '7',
+   respuestas: [{respuesta: 'NO MATARÁS',
+                cantidad: 45},
+                {respuesta: 'AMA A TU PRÓJIMO COMO A TI MISMO',
+                cantidad: 33},
+                {respuesta: 'NO ROBARÁS',
+                cantidad: 19},
+                {respuesta: 'HONRA A TU PADRE Y A TU MADRE',
+                cantidad: 2},
+                {respuesta: 'NO TENDRÁS ÍDOLOS',     
+                cantidad: 1}
+                ]
+  },
+  {pregunta: '8',
+   respuestas: [{respuesta: 'MUEVO LA BOCA',
+                cantidad: 37},
+                {respuesta: 'LE MIRO LA BOCA A L@S CANTANTES',
+                cantidad: 21},
+                {respuesta: 'LA APRENDO',
+                cantidad: 16},
+                {respuesta: 'ESCUCHO AL DE AL LADO',
+                cantidad: 10},
+                {respuesta: 'ME PONGO A ORAR',     
+                cantidad: 7},
+                {respuesta: 'LA BUSCO EN EL CELU',
+                cantidad: 5},
+                {respuesta: 'NO CANTO',
+                cantidad: 2}
+                ]
+  },
+   {pregunta: '9',
+   respuestas: [{respuesta: 'BUSCO SU MIRADA',
+                cantidad: 56},
+                {respuesta: 'L@ SALUDO EN LA BENDICIÓN',
+                cantidad: 15},
+                {respuesta: 'LE DOY UN VERSÍCULO',
+                cantidad: 13},
+                {respuesta: 'L@ MIRO TODO EL TIEMPO',
+                cantidad: 7},
+                {respuesta: 'ME HAGO AMIG@ DE SUS AMIGOS',     
+                cantidad: 6},
+                {respuesta: 'L@ SIGO EN REDES',
+                cantidad: 3}
+                ]
+  } 
+];
 
+//CREACION de la PAGINA
+let contenedorppal = document.createElement('div');
+let contenedoruno = document.createElement('div');
+let contenedordos = document.createElement('div');
+
+contenedorppal.setAttribute('id', 'cppal');
+
+contenedorppal.classList.add('contenedorp');
+contenedoruno.classList.add('contenedor');
+contenedordos.classList.add('contenedor');
+
+contenedorppal.appendChild(contenedoruno);
+contenedorppal.appendChild(contenedordos);
+
+document.body.appendChild(contenedorppal);
+
+
+//Creo los botones
+for(let i =0; i<4; i++){
+    let bott = document.createElement('button');
+    bott.setAttribute('id',i);
+    contenedoruno.appendChild(bott);
+}
+for(let i =4; i<8; i++){
+    let bott2 = document.createElement('button');
+    bott2.setAttribute('id',i); 
+    contenedordos.appendChild(bott2);
+}
+
+///SETEO LOS BOTONES
+const bot = document.querySelectorAll('button');
+for(let i=0; i<4 ; i++){
+    let numero = document.createTextNode(i+1);
+    bot[i].appendChild(numero);
+}
+for(let i=4; i<preguntas[0].respuestas.length ; i++){
+    let numero = document.createTextNode(i+1);
+    bot[i].appendChild(numero);
+}
+
+//CLASE AZUL
+const botones = document.querySelectorAll('button');
+
+for (let i =0; i<botones.length ; i++){
+    botones[i].classList.add('azul');
+}
+
+
+function limpiarYcargar(posicion){
+    //Limpio todooo
+    for(let i =0; i<4; i++){
+        const bott = document.getElementById(i);
+        contenedoruno.removeChild(bott);
+    }
+    for(let i =4; i<8; i++){
+        const bott = document.getElementById(i);
+        contenedordos.removeChild(bott);
+    }
+    ///---------------------
+    //Creo los botones
+    for(let i =0; i<4; i++){
+        let bott = document.createElement('button');
+        bott.setAttribute('id',i);
+        contenedoruno.appendChild(bott);
+    }
+    for(let i =4; i<8; i++){
+        let bott2 = document.createElement('button');
+        bott2.setAttribute('id',i); 
+        contenedordos.appendChild(bott2);
+    }
+
+    const bot = document.querySelectorAll('button');
+    ///SETEO LOS BOTONES
+    for(let i=0; i<4 ; i++){
+        let numero = document.createTextNode(i+1);
+        bot[i].appendChild(numero);
+    }
+    for(let i=4; i<preguntas[posicion+1].respuestas.length ; i++){
+        console.log(preguntas[posicion].respuestas.length );
+        let numero = document.createTextNode(i+1);
+        bot[i].appendChild(numero);
+    }
+    const botones = document.querySelectorAll('button');
+
+    for (let i =0; i<botones.length ; i++){
+        botones[i].classList.add('azul');
+    }
+}
+
+let posicion=0;
+
+const wrapper = document.getElementById('cppal');
+
+wrapper.addEventListener('click', (event) => {
+  const isButton = event.target.nodeName === 'BUTTON';
+  const index = parseInt(event.target.id);
+
+  if (!isButton) {
+    return;
+  }
+  if(event.target.id=='7'){
+        limpiarYcargar(posicion);
+        posicion++;
+  }else{
+    let elemento = document.getElementById(event.target.id);
+    
+    elemento.classList.add('verde');
+    const r = document.createTextNode(preguntas[posicion].respuestas[index].respuesta);
+    elemento.appendChild(r);
+   
+  }
+
+  //
+})
+
+
+///prueba
+
+  /*   const r1 = ["ELEFANTE 36", "JIRAFA 25", "LEÓN 18", "RINOCERONTE 12", "OSO 9"];
+    for (let i=0; i<r1.length ; i++){
+        let respta = document.createTextNode(r1[i]);
+        botones[i].appendChild(respta);
+    } */
+
+
+
+///---------------------------------------------------------
 //let boton = document.getElementsByClassName('btn'); 
 //boton.addEventListener('click',cambiar(boton),true);
 
+/* 
 
-class Respuesta{
-    lista = [];
-    valor = [];
 
-    constructor (lista, valor){
-        this.lista = lista;
-        this.valor = valor;
-    }
-}   
 
-const r1 = ["ELEFANTE", "JIRAFA", "LEÓN", "RINOCERONTE", "OSO"];
-const v1 = [ 36, 25, 18, 12, 9];
-const res1 = new Respuesta(r1,v1);
 
-const r2 = ["TENGO QUE ESTUDIAR", "LO MIRO POR FACEBOOK","NO TENGO EN QUE IR", "TENGO MI CULTO PERSONAL EN CASA","ME CAYÓ VISITA A ÚLTIMO MOMENTO", "JUEGA MI EQUIPO DE FÚTBOL", "ME DORMÍ"];
-const v2 = [ 37, 19, 14, 11, 10, 5, 4];
-const res2 = new Respuesta(r2,v2);
 
-const r3 = ["ME DUERMO","NO ENTIENDO NADA", "VOY SIN DESAYUNAR", "ME LEVANTO 5 MINUTOS ANTES","LLEGO TARDE SIEMPRE","MATES Y GALLETITAS DURANTE LA PRÉDICA" ];
-const v3 = [ 45, 23, 12, 9, 7 ,4];
-const res3 = new Respuesta(r3,v3);
 
-const r4 = ["MULTIPLICACIÓN DE LOS PANES/PECES","MAR ROJO", "CAMINAR EN AGUA", "JESUS RESUCITÓ", " AGUA EN VINO"];
-const v4 = [ 32, 25, 21, 18, 7];
-const res4 = new Respuesta(r4,v4);
 
-const r5 =  ["ES MÁS CÓMODO","ENCUENTRO MAS RAPIDO EL VERSÍCULO","PUEDO MIRAR LA REDES", "NO ME ENTRA LA BIBLIA EN EL BOLSO/MOCHILA", "ME DA VERGÜENZA LLEVAR LA BIBLIA EN LA CALLE"];
-const v5 = [ 54, 15, 11, 10, 10];
-const res5 = new Respuesta(r5,v5);
 
-const r6 = ["SHAMPOO/ CREMA / JABÓN / DENTÍFRICO","OJOTAS","ROPA","FRAZADAS/SABANAS", "BIBLIA","PLATOS / TAZA / UTENSILIOS"];
-const v6 = [ 60, 28, 6, 4, 2];
-const res6 = new Respuesta(r6,v6);
-
-const r7 = ["NO MATARÁS","AMA A TU PRÓJIMO COMO A TI MISMO","NO ROBARÁS", "HONRA A TU PADRE Y A TU MADRE","NO TENDRÁS ÍDOLOS"];
-const v7 = [ 45, 33, 19, 2, 1];
-const res7 = new Respuesta(r7,v7);
-
-const r8 = ["MUEVO LA BOCA PRONUNCIANDO ALGUNAS PALABRAS","LE MIRO LA BOCA A L@S CANTANTES","LA ESCUCHO VARIAS VECES HASTA APRENDERLA","TRATO DE ESCUCHAR AL DE AL LADO", "CIERRO LOS OJOS Y ME PONGO A ORAR", "LA BUSCO EN EL CELU", "NO CANTO"];
-const v8 = [ 37, 21, 16, 11, 8, 5 ,2];
-const res8 = new Respuesta(r8,v8);
-
-const r9 = ["ME METO EN EL CULTO Y MIRO SI ME ESTÁ MIRANDO","SIEMPRE L@ BUSCO EN EL MOMENTO DE LA BENDICIÓN ", "LE DOY UN VERSÍCULO", "LO MIRO TODO EL TIEMPO", "ME HAGO AMIG@ DE SUS AMIGOS", "L@ SIGO EN REDES" ];
-const v9 = [ 56, 15, 13, 7, 6, 3];
-const res9 = new Respuesta(r9,v9);
-
-const respuestas = [res1, res2, res3, res4, res5, res6, res7, res8, res9];
+const respuestas = [r1, r2, r3, r4, r5, r6, r7, r8, r9];
 
 
 
 function setear (){
+    const ress = document.getElementsByClassName('res');
+    let k=0;
     for(let i=0; i< respuestas.length(); i++){
         for (let j=0; j< respuestas[i].length(); j++){
-
+            const texto = document.createTextNode(respuestas[i][j]);
+            res[k].appendChild(texto);
+            k++;
         }
     }
 }
-//CLASE AZUL
-const botones = document.querySelectorAll('button');
-for (let i =0; i<botones.length ; i++){
-    botones[i].classList.add('azul');
+
+
+
+
+
+const setearTodo = () ={
+
+    
 }
-//----------------------------------
+const limpiarTodo = () =>{
 
-
-const cambiarEstilo = (e) =>{
-    e.target.classList.toggle('verde');
-    e.target.classList.toggle('azul'); 
 }
-
-const Boton1 = document.getElementById('1');
-Boton1.addEventListener('click', cambiarEstilo,true);
-
-const Boton2 = document.getElementById('2');
-Boton2.addEventListener('click', cambiarEstilo,true);
-
-const Boton3 = document.getElementById('3');
-Boton3.addEventListener('click', cambiarEstilo,true);
-
-const Boton4 = document.getElementById('4');
-Boton4.addEventListener('click', cambiarEstilo,true);
-
-const Boton5 = document.getElementById('5');
-Boton5.addEventListener('click', cambiarEstilo,true);
-
-const Boton6 = document.getElementById('6');
-Boton6.addEventListener('click', cambiarEstilo,true);
-
-const Boton7 = document.getElementById('7');
-Boton7.addEventListener('click', cambiarEstilo,true);
-
 const Boton8 = document.getElementById('8');
-Boton8.addEventListener('click', cambiarEstilo,true);
+Boton8.addEventListener('click', limpiarTodo,true);
 
 
 
@@ -108,7 +313,7 @@ const eso = document.createTextNode('dale perro');
 
 
 
-
+ */
 
 /*function cambiar(e){
     e.target.class == "btn";

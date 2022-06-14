@@ -149,6 +149,14 @@ contenedorppal.appendChild(contenedordos);
 
 document.body.appendChild(contenedorppal);
 
+const imagen = document.createElement('img');
+imagen.setAttribute('src','cruz-removebg.png');
+imagen.setAttribute('id','cruz');
+document.body.appendChild(imagen);
+imagen.classList.toggle('imagene');
+imagen.classList.add('ocultar');
+
+
 
 //Creo los botones
 for(let i =0; i<4; i++){
@@ -219,7 +227,7 @@ function limpiarYcargar(posicion){
 
     for (let i =0; i<botones.length ; i++){
         botones[i].classList.add('azul');
-    }
+    } 
 }
 
 let posicion=0;
@@ -237,103 +245,29 @@ wrapper.addEventListener('click', (event) => {
         limpiarYcargar(posicion);
         posicion++;
   }else{
-    let elemento = document.getElementById(event.target.id);
-    
-    elemento.classList.add('verde');
-    const r = document.createTextNode(preguntas[posicion].respuestas[index].respuesta);
-    elemento.appendChild(r);
-   
-  }
+    let div1 = document.createElement('div');
+    div1.classList.add('div11');
+    div1.innerHTML = preguntas[posicion].respuestas[index].respuesta;
 
-  //
+    let div2 = document.createElement('div');
+    
+    div2.innerHTML = preguntas[posicion].respuestas[index].cantidad;
+    div2.classList.add('div22');
+
+    let elemento = document.getElementById(event.target.id);
+    elemento.innerHTML ='';
+
+    elemento.appendChild(div1);
+    elemento.appendChild(div2);
+
+    elemento.classList.add('verde');
+    elemento.classList.add('clse');
+  
+  }
 })
 
-
-///prueba
-
-  /*   const r1 = ["ELEFANTE 36", "JIRAFA 25", "LEÓN 18", "RINOCERONTE 12", "OSO 9"];
-    for (let i=0; i<r1.length ; i++){
-        let respta = document.createTextNode(r1[i]);
-        botones[i].appendChild(respta);
-    } */
-
-
-
-///---------------------------------------------------------
-//let boton = document.getElementsByClassName('btn'); 
-//boton.addEventListener('click',cambiar(boton),true);
-
-/* 
-
-
-
-
-
-
-
-
-const respuestas = [r1, r2, r3, r4, r5, r6, r7, r8, r9];
-
-
-
-function setear (){
-    const ress = document.getElementsByClassName('res');
-    let k=0;
-    for(let i=0; i< respuestas.length(); i++){
-        for (let j=0; j< respuestas[i].length(); j++){
-            const texto = document.createTextNode(respuestas[i][j]);
-            res[k].appendChild(texto);
-            k++;
-        }
-    }
-}
-
-
-
-
-
-const setearTodo = () ={
-
-    
-}
-const limpiarTodo = () =>{
-
-}
-const Boton8 = document.getElementById('8');
-Boton8.addEventListener('click', limpiarTodo,true);
-
-
-
-
-
-
-
-const respues=document.getElementsByClassName('res');
-const eso = document.createTextNode('dale perro');
-
-
-
- */
-
-/*function cambiar(e){
-    e.target.class == "btn";
-    alert ("has pulsado un boton");
-    
-    ,
-    ,   
-   ,
-    ,
-    ,
-    ,
-    ,
-
-
-
-
-
-boton.addEventListener('click',cambiar,true);
-
-*/
-//document.querySelectorAll('button'),addEventListener('click', cambiar, true);
-
-
+document.addEventListener('keydown', (event) => {
+    const keyName = event.key;
+    var element = document.getElementById('cruz');
+    element.classList.toggle("ocultar");
+  });

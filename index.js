@@ -244,6 +244,9 @@ wrapper.addEventListener('click', (event) => {
   if(event.target.id=='7'){
         limpiarYcargar(posicion);
         posicion++;
+        if (posicion==preguntas.length-1){
+            posicion=0;
+        }
   }else{
     let div1 = document.createElement('div');
     div1.classList.add('div11');
